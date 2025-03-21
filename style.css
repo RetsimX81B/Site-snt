@@ -1,0 +1,331 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes tipUp {
+0%   { transform: translateY(50px) rotateZ(45deg); }
+100%   { transform: translateY(-70px) rotateZ(45deg); }
+}
+
+@keyframes lineUp {
+0%   { transform: translateY(50px); }
+100%   { transform: translateY(-70px); }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+}
+
+.kodfun-galeri {
+    margin-top: 10px;
+    display: flex;
+    height: 20rem;
+    gap: 1rem;
+}
+
+.kodfun-galeri > div {
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
+}
+
+.kodfun-galeri > div:hover {
+    flex: 5;
+}
+
+nav {
+    display: flex; 
+    justify-content: center;
+    padding: 16px;
+    width: 100%;
+}
+
+.menuItems {
+    list-style: none;
+    display: flex;
+
+}
+
+.menuItems li {
+    margin: 50px;
+}
+
+.menuItems a {
+    text-decoration: none;
+    color: #8f8f8f;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    display: flex;
+    &::before {
+        content: attr(data-item);
+        transition: 0.5s;
+        color: #a0210f;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        overflow: hidden;
+    }
+    &:hover {
+        &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+input {
+    border: none;
+    display: flex;
+    align-items: end;
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+    background-color: white;
+    outline: none;
+    background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-256.png");
+    background-size: 30px;
+    background-position: center;
+    font-size: 18px;
+    color: grey;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition-property: width, border-radius, background-position, padding-left;
+    transition-duration: 0.5s;
+}
+
+input:focus {
+    width: 330px;
+    border-radius: 5px;
+    cursor: text;
+    padding-left: 40px;
+    padding-right: 20px;
+    background-position: 5px;
+}
+
+.logomotoGP {
+    width: 500px;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.pilote-img{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.lineupimg{
+    width: 500px;
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 50px;
+}
+.bouton {
+    height: 60px;
+    width: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;   
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;    
+    z-index: 20;
+    border-style: solid;
+    transition: transform 0.9s ease-in-out; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    display: inline-block;
+    transition: width 0.5s ease-in-out,
+    margin 1.5s ease-in-out,
+    border-radius 1.25s ease-in-out,
+    color 1.25s ease-in-out;
+    overflow: hidden;
+        &:hover, &.auto {
+                width: 90px;
+                margin-left: -30px;
+                border-radius: 40px;
+                color: rgba(#7337a3ef, 0);
+                transition: width 1s.5 ease-in-out,
+                margin 1s.5 ease-in-out,
+                border-radius 1s.25 ease-in-out,
+                color 1s.25 ease-in-out 1s.25;
+            &:before {
+                animation: lineUp 1s cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite .5s;
+                }
+            &:after {
+                animation: tipUp 1s cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite .5s;
+                }
+    }
+    &:before {
+                position: absolute;
+                display: inline-block;
+                content: "";
+                background: #a0210f;
+                width: 7px;
+                height: 44px;
+                top: 50%;
+                left: 50%;
+                margin-top: -8px;
+                margin-left: -3px;
+                transform: translateY(50px);
+    }
+    &:after {
+                position: absolute;
+                display: inline-block;
+                content: "";
+                width: 20px;
+                height: 20px;
+                color: #a0210f;
+                border-top: 5px solid;
+                border-left: 5px solid;
+                transform: rotateZ(45deg);
+                top: 50%;
+                left: 50%;
+                margin-top: -6px;
+                margin-left: -13px;
+                transform: translateY(50px) rotateZ(45deg);
+    }
+}
+
+.bouton strong {
+    position: relative;
+    z-index: 2; 
+    font-size: 14px;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.bouton strong:hover {
+    opacity: 0;
+}
+
+.calendarlogo{
+    width: 500px;
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 50px;
+}
+
+.calendarimg{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.racedayimg{
+    width: 200px;
+    display: inline-block; 
+    margin-top: 50px;
+    height: 50px;
+   
+}
+
+.racedaydiv{
+    text-align: center;
+}
+
+.circuitimg{
+    width: 350px;
+    display: inline-block;
+   margin-top: 50px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-left: 0;
+  
+}
+
+h3{
+    margin-top: 20px;
+}
+
+.results {
+    margin-left: 100px;
+
+}
+.results-container {
+    margin-top: 50px;
+    max-width: fit-content; 
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /
+}
+
+.results-list {
+    list-style-type: disc; 
+    padding-left: 20px; 
+    margin: 0;
+}
+
+.results-list li {
+    padding: 8px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd; 
+}
+
+.results-list li:last-child {
+    border-bottom: none;
+}
+
+.results-list strong {
+    color: #a0210f; 
+}
+
+
+.gpresult{
+   
+    display: flex;
+    gap: 0px; 
+    justify-content: space-between; 
+
+
+
+.hidden-section {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95); 
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+
+.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+.hidden-again {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+}
+
+#results-conntainer-argentina{
+    margin-top: 85px
+}
+
+#results-conntainer-austin{
+    margin-top: 85px;
+}
